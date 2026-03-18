@@ -10,8 +10,6 @@ Array::Array(int startCapacity) {
 
 	ptr = new int[capacity];
 	size = 0;
-
-	delete[] ptr;
 }
 
 Array::~Array() {
