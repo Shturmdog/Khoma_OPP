@@ -28,6 +28,10 @@ int DateTime::DateEaster() {
 		}
 	}
 
+	for (int i = 1; i < month; i++) {
+		globalDate += daysInMonth(year, i);
+	}
+
 	return globalDate;
 }
 
