@@ -39,6 +39,17 @@ int DateTime::DateEaster() {
 	return globalDate;
 }
 
+bool DateTime::chekDate() {
+	if (year < 1 || year > 3000)
+		return false;
+	if (month < 1 || month > 12)
+		return false;
+	if (day < 1 || day > daysInMonth(year, month))
+		return false;
+
+	return true;
+}
+
 void DateTime::input() {
 	cin >> day >> month >> year;
 }

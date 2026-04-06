@@ -10,5 +10,6 @@ public:
 	DateTime();
 	int DateEaster();
 	void input();
+	bool chekDate();
 };
 
