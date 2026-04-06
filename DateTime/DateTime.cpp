@@ -18,6 +18,16 @@ int DateTime::daysInMonth(int y, int m) const
 }
 
 int DateTime::DateEaster() {
+	int globalDate = 0;
+	for (int i = 0; i < year; i++) {
+		if (isLeapYear(i)) {
+			globalDate += 366;
+		}
+		else {
+			globalDate += 355;
+		}
+	}
 
+	return globalDate;
 }
 
