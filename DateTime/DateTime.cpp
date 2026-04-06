@@ -11,10 +11,12 @@ bool DateTime::isLeapYear(int y) const
 
 int DateTime::daysInMonth(int y, int m) const
 {
-	static const int days[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	if (m == 2 && isLeapYear(y))
-		return 29;
-	return days[m - 1];
+	int days = 30 + ((m + m / 8) % 2);
+
+	if (m == 2)
+		days = isLeapYear(y) ? 29 : 28;
+
+	return days;
 }
 
 int DateTime::DateEaster() {
@@ -59,5 +61,10 @@ void DateTime::input() {
 
 void DateTime::basicFormat() {
 	cout << day << '.' << month << '.' << year << endl;
+}
+
+void DateTime::shortformat() {
+	cout << day << month;
+
 }
 
