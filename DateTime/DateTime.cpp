@@ -55,9 +55,9 @@ void DateTime::input() {
 	if (!checkDate()) {
 		cout << "Error: incorrect date" << endl;
 	}
-	else
-	{
-		cout << "Date: " << day << '.' << month << '.' << year;
-	}
-
 }
+
+void DateTime::basicFormat() {
+	cout << day << '.' << month << '.' << year << endl;
+}
+

@@ -7,6 +7,6 @@ int main() {
 
 	//cout << data.DateEaster();
 	data.input();
-
+	data.basicFormat();
 }
 
