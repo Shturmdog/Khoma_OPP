@@ -39,7 +39,7 @@ int DateTime::DateEaster() {
 	return globalDate;
 }
 
-bool DateTime::chekDate() {
+bool DateTime::checkDate() {
 	if (year < 1 || year > 3000)
 		return false;
 	if (month < 1 || month > 12)
@@ -52,4 +52,12 @@ bool DateTime::chekDate() {
 
 void DateTime::input() {
 	cin >> day >> month >> year;
+	if (!checkDate()) {
+		cout << "Error: incorrect date" << endl;
+	}
+	else
+	{
+		cout << "Date: " << day << '.' << month << '.' << year;
+	}
+
 }
