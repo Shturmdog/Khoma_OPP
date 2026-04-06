@@ -5,5 +5,8 @@ using namespace std;
 int main() {
 	DateTime data;
 
-	cout << data.DateEaster();
+	//cout << data.DateEaster();
+	data.input();
+
 }
+

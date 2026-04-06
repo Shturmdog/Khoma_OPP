@@ -39,4 +39,6 @@ int DateTime::DateEaster() {
 	return globalDate;
 }
 
-;
+void DateTime::input() {
+	cin >> day >> month >> year;
+}

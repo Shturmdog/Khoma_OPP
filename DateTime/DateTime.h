@@ -9,5 +9,6 @@ class DateTime {
 public:
 	DateTime();
 	int DateEaster();
+	void input();
 };
 
