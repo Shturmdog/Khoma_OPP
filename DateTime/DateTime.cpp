@@ -60,7 +60,9 @@ void DateTime::input() {
 }
 
 void DateTime::basicFormat() {
-	cout << day << '.' << month << '.' << year << endl;
+	cout << day << '.';
+	RoundZero(month);
+	cout << '.' << year << endl;
 }
 
 void DateTime::shortformat() {
