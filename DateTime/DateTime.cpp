@@ -74,7 +74,8 @@ void DateTime::shortformat() {
 }
 
 void DateTime::textformat() {
-
+	const char* months[] = { "январь" };
+	cout << day << months[month - 1] << year;
 }
 
 void DateTime::RoundZero(int n) {
