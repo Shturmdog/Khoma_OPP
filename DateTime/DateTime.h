@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+class DataTimeException {};
+
 class DateTime {
 	int year, month, day;
 
