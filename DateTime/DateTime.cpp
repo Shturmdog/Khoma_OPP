@@ -68,3 +68,9 @@ void DateTime::shortformat() {
 
 }
 
+void DateTime::RoundZero(int n) {
+	if (n < 10)
+		cout << '0';
+	cout << n;
+}
+

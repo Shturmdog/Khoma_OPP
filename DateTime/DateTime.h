@@ -12,6 +12,7 @@ public:
 	void input();
 	void basicFormat();
 	bool checkDate();
+	void RoundZero(int n);
 
 };
 
