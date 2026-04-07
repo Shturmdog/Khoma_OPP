@@ -74,7 +74,7 @@ void DateTime::shortformat() {
 }
 
 void DateTime::textformat() {
-	const char* months[] = { "январь" };
+	const char* months[] = { "январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" };
 	cout << day << months[month - 1] << year;
 }
 
