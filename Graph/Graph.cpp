@@ -47,3 +47,29 @@ void Node::addNeighbour(Node* neighbour) {
 void Node::removeNeighbour(Node* neighbour) {
 	neighbours.erase(neighbour);
 }
+
+bool BFS::connected(Node* begin, Node* end)
+{
+	if (!begin || !end)
+		return false;
+
+	queue<Node*> nodes;
+	nodes.push(begin);
+	set<Node*> visited;
+
+	while (!nodes.empty())
+	{
+		Node* next = nodes.front();
+		nodes.pop();
+
+		if (next == end)
+			return true;
+
+		visited.insert(next);
+
+		for (Node::node_iterator it = next->nb_begin(); it != next->nb_end(); it++)
+			if (visited.find(*it) == visited.end())
+				nodes.push(*it);
+	}
+	return false;
+}
