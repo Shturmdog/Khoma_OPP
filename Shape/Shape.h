@@ -120,4 +120,8 @@ public:
 		c = Point<double>(p3.x, p3.y);
 		calc_side();
 	}
+
+	double calc_perimeter() const {
+		return sideA + sideB + sideC;
+	}
 };
