@@ -88,4 +88,14 @@ public:
 	void name() {
 		cout << "Elipse" << endl;
 	}
+
+
+class Triangle : public Figure {
+	double sideA, sideB, sideC;
+	Point<double> a, b, c;
+
+	void calc_side() {
+		sideA = b.distance(c);
+		sideB = a.distance(c);
+		sideC = a.distance(b);
 };
