@@ -199,6 +199,12 @@ public:
 			return perinmetr;
 		}
 
+		void name() {
+			if (vertexCount == 4) cout << "Quadrilateral";
+			else if (vertexCount == 5) cout << "Pentagon";
+			else if (vertexCount == 6) cout << "Hexagon";
+			else cout << "Polygon";
+		}
 	}
 
 
