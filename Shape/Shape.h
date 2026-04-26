@@ -186,6 +186,19 @@ public:
 
 			return abs(area) / 2;
 		}
+
+		double calc_perimetr() {
+			if (vertexCount < 3) return 0;
+
+			double perinmetr = 0;
+			for (int i = 0; i < vertexCount; i++) {
+				int j = (i + 1) % vertexCount;
+				perinmetr += vertex[i].distance(vertex[j]);
+			}
+
+			return perinmetr;
+		}
+
 	}
 
 
