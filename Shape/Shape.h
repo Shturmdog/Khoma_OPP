@@ -106,4 +106,18 @@ public:
 		c = p3;
 		calc_side();
 	}
+
+	Triangle(const Point<int>& p1, const Point<int>& p2, const Point<int>& p3) {
+		a = Point<double>(p1.x, p1.y);
+		b = Point<double>(p2.x, p2.y);
+		c = Point<double>(p3.x, p3.y);
+		calc_side();
+	}
+
+	Triangle(const Point<float>& p1, const Point<float>& p2, const Point<float>& p3) {
+		a = Point<double>(p1.x, p1.y);
+		b = Point<double>(p2.x, p2.y);
+		c = Point<double>(p3.x, p3.y);
+		calc_side();
+	}
 };
