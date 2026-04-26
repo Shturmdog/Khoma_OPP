@@ -88,6 +88,7 @@ public:
 	void name() {
 		cout << "Elipse" << endl;
 	}
+};
 
 
 class Triangle : public Figure {
@@ -130,20 +131,29 @@ public:
 			(sideA + sideC > sideB) &&
 			(sideB + sideC > sideA) &&
 			(sideA > 0 && sideB > 0 && sideC > 0);
+	}
 
-		double calc_area() {
-			if (!isValid()) return -1;
-			double p = (sideA + sideB + sideC) / 2;
-			return sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+	double calc_area() {
+		if (!isValid()) return -1;
+		double p = (sideA + sideB + sideC) / 2;
+		return sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
 		}
 
-		double calc_perimetr() {
-			return sideA + sideB + sideC;
+	double calc_perimetr() {
+		return sideA + sideB + sideC;
 		}
 
-		void name() {
-			cout << "Triangle";
+	void name() {
+		cout << "Triangle";
 		}
-	};
-
 };
+
+	class Polygon : public Figure {
+		vector<Point<double>> vertex;
+		int vertexCount;
+
+	public:
+
+	}
+
+
