@@ -153,7 +153,12 @@ public:
 		int vertexCount;
 
 	public:
-
+		Polygon(const Point<double> vx[], int count) {
+			vertexCount = count;
+			for (int i = 0; i < count; i++) {
+				vertex.push_back(vx[i]);
+			}
+		}
 	}
 
 
