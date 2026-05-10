@@ -70,3 +70,13 @@ Cell Field::getCell(int i, int j) const {
 bool Field::isRedTurnNow() const {
 	return isRedTurn;
 }
+
+void Field::print() const {
+	for (int i = FIELD_WIDTH - 1; i >= 0; i--) {
+		for (int j = 0; j < FIELD_HEIGHT; j++) {
+			if (cells[i][j] == RED) cout << "R|";
+			else if (cells[i][j] == YELLOW) cout << "Y|";
+			else cout << "_";
+		}
+	}
+}
