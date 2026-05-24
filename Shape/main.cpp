@@ -41,7 +41,7 @@ int main() {
 	};
 
 	Polygon poly(quadPoints, 4);
-	cout << "Testing Polygon:\n";
+	cout << "Testigit-m ng Polygon:\n";
 	cout << " Name: ";
 	poly.name();
 	cout << "\n Area: " << poly.calc_area();
