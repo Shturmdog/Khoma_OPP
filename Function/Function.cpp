@@ -160,7 +160,7 @@ double Hyperbola::integrate(double left, double right, double eps) const {
     return sum * h / 3;
 }
 
-double Hyperbola::diff(double x, double /*eps*/) const {
+double Hyperbola::diff(double x, double eps) const {
     double denominator = x + b;
     if (fabs(denominator) < 1e-12) return NAN;
     return -a / (denominator * denominator);
@@ -232,7 +232,7 @@ double Exponenta::integrate(double left, double right, double) const {
 }
 
 // Аналитическая производная: f'(x) = a * b * exp(b*x)
-double Exponenta::diff(double x, double /*eps*/) const {
+double Exponenta::diff(double x, double eps) const {
     return a * b * exp(b * x);
 }
 
