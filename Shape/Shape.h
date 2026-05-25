@@ -1,10 +1,16 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
 #include <vector>
 
-const double PI = M_PI;  // Note: may require #define _USE_MATH_DEFINES before cmath
+// Гарантия наличия M_PI
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+const double PI = M_PI;
 
 template<typename T>
 class Point {
@@ -16,11 +22,11 @@ public:
     double distance(const Point& other) const;
 };
 
-// Abstract base class
+// Абстрактный базовый класс
 class Figure {
 public:
     virtual double calc_area() = 0;
-    virtual double calc_perimeter() = 0;   // renamed from calcl_perimetr
+    virtual double calc_perimeter() = 0;
     virtual void name() = 0;
     virtual ~Figure() = default;
 };
@@ -36,7 +42,7 @@ public:
     void name() override;
 };
 
-class Ellipse : public Figure {   // corrected spelling
+class Ellipse : public Figure {
     double center_x;
     double center_y;
     double radius_a;
@@ -52,7 +58,7 @@ class Triangle : public Figure {
     double sideA, sideB, sideC;
     Point<double> a, b, c;
 
-    void calc_side();   // computes side lengths from points
+    void calc_side();
 public:
     Triangle(const Point<double>& p1, const Point<double>& p2, const Point<double>& p3);
     Triangle(const Point<int>& p1, const Point<int>& p2, const Point<int>& p3);
@@ -66,7 +72,6 @@ public:
 
 class Polygon : public Figure {
     std::vector<Point<double>> vertex;
-    int vertexCount;
 public:
     Polygon(const Point<double> vx[], int count);
     Polygon(const Point<int> vx[], int count);
@@ -77,7 +82,6 @@ public:
     void name() override;
 };
 
-// ---------- Template definitions (must be in header) ----------
 template<typename T>
 Point<T>::Point(T x, T y) : x(x), y(y) {}
 
@@ -93,7 +97,7 @@ Point<T> Point<T>::operator-(const Point& other) const {
 
 template<typename T>
 double Point<T>::distance(const Point& other) const {
-    double dx = static_cast<double>(x - other.x);
-    double dy = static_cast<double>(y - other.y);
+    double dx = x - other.x;
+    double dy = y - other.y;
     return std::sqrt(dx * dx + dy * dy);
 }
