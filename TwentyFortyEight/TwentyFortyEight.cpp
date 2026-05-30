@@ -11,5 +11,10 @@ void Game::AddTile() {
 			emptyCells.push_back({ i, j });
 		}
 	}
+	int x = rand() % emptyCells.size();
 	int value = (rand() % 10) ? 4 : 2;
+
+	int row = emptyCells[x].first;
+	int col = emptyCells[x].second;
+	board[row][col] = value;
 }
