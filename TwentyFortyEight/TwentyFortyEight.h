@@ -4,4 +4,7 @@
 class Game {
 	int board[4][4];
 	int score;
+
+	void AddTile();
+	void ClearBourd();
 };
