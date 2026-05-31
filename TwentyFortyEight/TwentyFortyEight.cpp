@@ -122,3 +122,36 @@ void Game::printBoard() {
 		cout << "----------------------------------------" << endl;
 	}
 }
+
+void Game::Game2048() {
+	score = 0;
+	moved = false;
+	ClearBoard();
+	AddTile();
+	AddTile();
+}
+
+bool Game::hasWon() {
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			if (board[i][j] == 2048)
+				return true;
+	return false;
+}
+
+bool Game::canMove() {
+	// Проверьяем нет ли пустых ячеек
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			if (board[i][j] == 0)
+				return true;
+
+	// Проверяем, можно ли слить плитки
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++) {
+			if (j < 3 && board[i][j] == board[i][j + 1]) return true;
+			if (i < 3 && board[i][j] == board[i + 1][j]) return true;
+		}
+
+	return false;
+}
