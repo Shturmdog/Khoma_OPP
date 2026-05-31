@@ -1,7 +1,8 @@
 #include "TwentyFortyEight.h"
 #include <iostream>
 #include <vector>
-
+#include <iomanip>
+#include <conio.h>
 using namespace std;
 
 void Game::AddTile() {
@@ -18,7 +19,7 @@ void Game::AddTile() {
 
 	//Выбираем случайную клеку и подставляем случайное значение
 	int x = rand() % emptyCells.size();
-	int value = (rand() % 10) ? 4 : 2;
+	int value = (rand() % 10 == 0) ? 4 : 2;
 
 	int row = emptyCells[x].first;
 	int col = emptyCells[x].second;
@@ -102,4 +103,22 @@ void Game::MoveDown() {
 	Transpose();
 	MoveRight();
 	Transpose();
+}
+
+void Game::printBoard() {
+	system("cls");
+	cout << "Очки: " << score << endl;
+	cout << "----------------------------------------" << endl;
+
+	for (int i = 0; i < 4; i++) {
+		cout << "|";
+		for (int j = 0; j < 4; j++) {
+			if (board[i][j] == 0)
+				cout << setw(6) << " " << "|";
+			else
+				cout << setw(6) << board[i][j] << "|";
+		}
+		cout << endl;
+		cout << "----------------------------------------" << endl;
+	}
 }
