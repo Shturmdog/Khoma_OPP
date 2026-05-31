@@ -60,3 +60,13 @@ void Game::MergeLeft() {
 		}
 	}
 }
+
+void Game::ReverseRows() {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 2; j++) {
+			int temp = board[i][j];
+			board[i][j] = board[i][3 - j];
+			board[i][3 - j] = temp;
+		}
+	}
+}
