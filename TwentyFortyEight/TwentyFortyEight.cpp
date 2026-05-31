@@ -79,3 +79,27 @@ void Game::Transpose() {
 			board[j][i] = temp;
 		}
 }
+
+void Game::MoveLeft() {
+	LeftShift();
+	MergeLeft();
+	LeftShift();
+}
+
+void Game::MoveRight() {
+	ReverseRows();
+	MoveLeft();
+	ReverseRows();
+}
+
+void Game::MoveUp() {
+	Transpose();
+	MoveLeft();
+	Transpose();
+}
+
+void Game::MoveDown() {
+	Transpose();
+	MoveRight();
+	Transpose();
+}
