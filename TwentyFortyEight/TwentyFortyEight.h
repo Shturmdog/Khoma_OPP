@@ -6,6 +6,7 @@ class Game {
 	int score = 0;
 	bool moved = false;
 
+	void printBoard();
 	void AddTile();
 	void ClearBourd();
 	void LeftShift();
@@ -16,6 +17,8 @@ class Game {
 	void MoveRight();
 	void MoveUp();
 	void MoveDown();
+	bool canMove();
+	bool hasWon();
 
 public:
 	void Game2048();
