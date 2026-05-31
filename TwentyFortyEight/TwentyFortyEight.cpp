@@ -70,3 +70,12 @@ void Game::ReverseRows() {
 		}
 	}
 }
+
+void Game::Transpose() {
+	for (int i = 0; i < 4; i++)
+		for (int j = i + 1; j < 4; j++) {
+			int temp = board[i][j];
+			board[i][j] = board[j][i];
+			board[j][i] = temp;
+		}
+}
