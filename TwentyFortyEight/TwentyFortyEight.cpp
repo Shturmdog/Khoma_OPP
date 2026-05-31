@@ -155,3 +155,52 @@ bool Game::canMove() {
 
 	return false;
 }
+
+void Game::play() {
+	Game2048();
+	printBoard();
+	bool alreadyWon = false;
+
+	while (true) {
+		if (!canMove()) {
+			cout << "Игра окончена! Счёт: " << score << endl;
+			break;
+		}
+
+		if (!alreadyWon && hasWon()) {
+			cout << "Вы победили! " << endl;
+			cout << "Хотите продолжить? (y/n)" << endl;
+			char c;
+			cin >> c;
+			if (c != 'y' && c != 'Y')
+				break;
+			alreadyWon = true;
+		}
+
+		char key = _getch();
+
+		if (key == 27) {
+			cout << "\nИгра завершена. Счёт: " << score << endl;
+			break;
+		}
+
+		moved = false;
+
+		if (key == -32 || key == 0) {
+			key = _getch();
+			switch (key) {
+			case 75: MoveLeft(); break;
+			case 72: MoveUp(); break;
+			case 77: MoveRight(); break;
+			case 80: MoveDown(); break;
+			default: continue;
+			}
+		}
+
+		// Если ход изменил поле, добавляем плитку и перерисовываем
+		if (moved) {
+			AddTile();
+			printBoard();
+		}
+	}
+}
