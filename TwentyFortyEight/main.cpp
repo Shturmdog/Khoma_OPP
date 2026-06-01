@@ -1,10 +1,10 @@
-#include <iostream>
-#include "TwentyFortyEight.h"
-
-using namespace std;
+#include "Game.h"
+#include <cstdlib>
+#include <ctime>
+#include <locale.h>
 
 int main() {
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "rus_ru.UTF-8");
     srand(time(NULL));
     Game game;
     game.play();
